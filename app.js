@@ -1,8 +1,10 @@
 const pipes = document.getElementsByClassName("pipe");
 const havoc = document.querySelector(".havoc");
 
-document.addEventListener("click", e => {
-       console.log(e.target) 
+const movement = havoc.style.transition
+
+document.addEventListener("mousemove", e => {
+   
 })
    
    
