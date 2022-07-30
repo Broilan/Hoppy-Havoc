@@ -15,14 +15,14 @@
 }
 
 .havoc {
-    height: 150px;
-    width: 1;
+    position: absolute;
+    /* height: 150px;
+    width: 1; */
 }
 
 .container:hover .pipe {
     transform: translateY(200%);
 }
-
 
 
 body {
