@@ -1,10 +1,11 @@
 body {
     background: url('_21_city-background-sprites_These-8-Bit-GIFs-Perfectly-Capture-the-Subtle-Movements-in-.gif');
 }
+
 .container {
     position: relative;
-    display: flex;
-    justify-content: space-evenly;
+    height: 900px;
+    
 }
 
 .obstacle {
@@ -12,6 +13,13 @@ body {
     background-color: green;
     height: 350px;
     width: 100px
+
+}
+
+.gameOver {
+    position: absolute;
+    color: blue;
+    font-size: 100px;
 }
 
 .havoc {
@@ -20,7 +28,23 @@ body {
     width: 1; */
 }
 
+.bottom {
+position: absolute;
+background-color: black;
+bottom: 0px;
+left: 0px;
+height: 75px;
+width: 2000px;
+}
 
+.top {
+    position: absolute;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    height: 75px;
+    width: 2000px;
+    }
 
 
 
