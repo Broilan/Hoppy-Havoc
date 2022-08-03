@@ -1,10 +1,8 @@
 body {
-    height: 100vh;
     background: url('_21_city-background-sprites_These-8-Bit-GIFs-Perfectly-Capture-the-Subtle-Movements-in-.gif');
 }
 .container {
     position: relative;
-    height: 100vh;
     display: flex;
     justify-content: space-evenly;
 }
@@ -12,17 +10,9 @@ body {
 .obstacle {
     position: absolute;
     background-color: green;
-    height: 100px;
+    height: 350px;
     width: 100px
 }
-
-/* #pipe1, #pipe2, #pipe3, #pipe4, #pipe5 {
-    position: relative;
-    background-color: green;
-    height: 350px;
-    width: 100px;
-    color: green;    
-} */
 
 .havoc {
     position: absolute;
