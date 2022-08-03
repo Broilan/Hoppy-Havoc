@@ -10,23 +10,29 @@ let arrows = window.addEventListener('keyup', (e) => {
     switch(e.key) {
         case 'ArrowUp':
             havoc.style.top = parseInt(havoc.style.top) - keyPress + 'px';
-            console.log(yLocation);
         break;
         case 'ArrowDown':
             havoc.style.top = parseInt(havoc.style.top) + keyPress + 'px';
-            console.log(yLocation);
         break;       
         case 'ArrowRight':
             havoc.style.left = parseInt(havoc.style.left) + keyPress + 'px';
-            console.log(xLocation);
         break;
         case 'ArrowLeft':
             havoc.style.left = parseInt(havoc.style.left) - keyPress + 'px';
-            console.log(xLocation);
         break;     
     }
 });
 
+//game start
+let gameOn = false
+window.addEventListener('keyup', (e) =>{
+switch(e.key) {
+    case 'Enter':
+       gameOn = true;
+setInterval(charGravity, 5);
+setInterval(generateObstacles, 2000);
+}
+})
 
 //gravity
 function charGravity() {
@@ -39,29 +45,16 @@ function generateObstacles() {
     let obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
     obstacle.style.right = 0;
-    let randomNum = Math.floor(Math.random() * 1080);
+    let randomNum = Math.floor(Math.random() * window.height) - 250;
     obstacle.style.top = randomNum + 'px';
     display.appendChild(obstacle);
+
+    function obstacleMovement() {
+    obstacle.style.right = parseInt(obstacle.style.right) + 1 + 'px';
+    }
+    setInterval(obstacleMovement, 1);
 }
 
-// moving pipes
-function obstacleMovement() {
-    let obstacle = document.getElementsByClassName('obstacle');
-    for (let i = 0; i <= 10; i++) {
-        if (i = 10) {
-            let xMove = i; {
-                console.log(xMove);
-        } if (xMove = 10) {
-            obstacle.style.right = parseInt(obstacle.style.right) + xMove + 'px';
-        }
-            }
-        }
-    }
-        
-
-
-setInterval(generateObstacles, 1000);
-setInterval(obstacleMovement, 2000);
-setInterval(charGravity, 5);
+//boundaries
 
 
