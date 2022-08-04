@@ -11,7 +11,7 @@ body {
 .obstacle {
     position: absolute;
     background-color: green;
-    height: 350px;
+    height: 500px;
     width: 100px
 
 }
@@ -20,6 +20,19 @@ body {
     position: absolute;
     color: blue;
     font-size: 100px;
+}
+
+.startScreen {
+    position: absolute;
+}
+
+.score {
+    position: absolute;
+}
+
+.reset { 
+    position: absolute;
+    font-size: 50px;
 }
 
 .havoc {
