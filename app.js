@@ -28,8 +28,8 @@ let arrows = window.addEventListener('keyup', (e) => {
 function count() {
     let scoreX = document.createElement('h1');
     scoreX.classList.add('score');
-    let counter = '0';
-    scoreX.textContent = "score:" + counter;
+    // let counter = '0';
+    // scoreX.textContent = "score:" + counter;
     scoreX.style.display = 'flex';
     scoreX.style.justifyContent = 'center';
     scoreX.style.alignItems = 'center';
