@@ -17,7 +17,6 @@ let arrows = window.addEventListener('keyup', (e) => {
         break;       
         case 'ArrowRight':
             havoc.style.left = parseInt(havoc.style.left) + keyPress + 'px';
-            console.log(havoc.style.left);
         break;
         case 'ArrowLeft':
             havoc.style.left = parseInt(havoc.style.left) - keyPress + 'px';
@@ -25,10 +24,11 @@ let arrows = window.addEventListener('keyup', (e) => {
     }
 });
 
-//score tracking
-function score() {
+//score styling
+function count() {
     let scoreX = document.createElement('h1');
     scoreX.classList.add('score');
+    let counter = '0';
     scoreX.textContent = "score:" + counter;
     scoreX.style.display = 'flex';
     scoreX.style.justifyContent = 'center';
@@ -39,8 +39,18 @@ function score() {
     scoreX.style.width = '150px';
     scoreX.style.backgroundColor = 'lightBlue';
     body.appendChild(scoreX);
+    // let havocTop = parseInt(havoc.style.top);
+
+
+    //score tracking
+//    if (havocTop > obstacleTop + obstacleHeight) {
+//         let counter = counter + '1';
+//      } else (havocTop + havocHeight < ObstacleTop) {
+//          let counter = counter + '1';
+//      }
 }
-score();
+count()
+
 //game start
 let startScreen = document.createElement('div');
 startScreen.classList.add('startScreen')
@@ -103,17 +113,26 @@ function detectHit() {
     let obstacleHeight = parseInt(obstacle.clientHeight);
     let obstacleWidth =  parseInt(obstacle.clientWidth);
     // compare tops to bottoms
-    if(havocRight + havocWidth < obstacleRight) {
-    } else if (havocTop > obstacleTop + obstacleHeight) {
-    } else if (havocTop + havocHeight < obstacleTop) {
-    } else if (havocRight > obstacleRight + obstacleWidth) {
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+    } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe   
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
     } else (gameOver()); {
     }
    
 }    
-setInterval(detectHit, 1); 
+setInterval(detectHit, 1000); 
  let omInterval = setInterval(obstacleMovement, 1);
 
+ //counter function
+//  function counter() {
+//     if (havocRight > obstacleRight && havocTop > obstacleTop) {
+//         console.log('1');
+//     } else (havocRight > obstacleRight && havocTop < obstacleTop) {
+//         console.log('1');
+//     }
+// } 
+// counter();
  //game end 
 function gameOver() {
     clearInterval(goInterval);
@@ -135,7 +154,6 @@ function gameOver() {
         window.location.reload();
     })
 } 
-
 }
 
 
