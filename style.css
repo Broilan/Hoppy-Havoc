@@ -3,9 +3,19 @@ body {
 }
 
 .container {
-    position: relative;
-    height: 900px;
-    
+position: absolute;
+}
+
+.container2 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    width: 100vh;
 }
 
 .obstacle {
@@ -18,20 +28,40 @@ body {
 
 .gameOver {
     position: absolute;
+    font-family: 'Press Start 2P', cursive;
     color: blue;
     font-size: 100px;
 }
 
-.startScreen {
-    position: absolute;
+
+.gameTitle {
+position: absolute;
+right: 750px;
+bottom: -420px;
+    font-size: 100px;
+    color: rgb(0, 5, 51);
+        font-family: 'Press Start 2P', cursive;
 }
+
+.start {
+    color: rgb(0, 5, 51);
+    position: relative;
+    right: 520px;
+    bottom: -480px;
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+}
+
 
 .score {
     position: absolute;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .reset { 
     position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    background: transparent;
     font-size: 50px;
 }
 

@@ -24,12 +24,15 @@ let arrows = window.addEventListener('keyup', (e) => {
     }
 });
 
-//score styling
+//timer styling + functionality
 function count() {
     let scoreX = document.createElement('h1');
     scoreX.classList.add('score');
-    // let counter = '0';
-    // scoreX.textContent = "score:" + counter;
+    let sec = '0';
+    timer = setInterval(() =>{
+    scoreX.textContent = "00:" + sec;
+        sec++;
+    }, 1000)
     scoreX.style.display = 'flex';
     scoreX.style.justifyContent = 'center';
     scoreX.style.alignItems = 'center';
@@ -39,35 +42,27 @@ function count() {
     scoreX.style.width = '150px';
     scoreX.style.backgroundColor = 'lightBlue';
     body.appendChild(scoreX);
-    // let havocTop = parseInt(havoc.style.top);
-
-
-    //score tracking
-//    if (havocTop > obstacleTop + obstacleHeight) {
-//         let counter = counter + '1';
-//      } else (havocTop + havocHeight < ObstacleTop) {
-//          let counter = counter + '1';
-//      }
 }
-count()
-
 //game start
-let startScreen = document.createElement('div');
-startScreen.classList.add('startScreen')
-startScreen.style.height = '500px';
-startScreen.style.width = '800px';
-startScreen.style.borderRadius = '100px', 'black';
-startScreen.style.backgroundColor = 'lightBlue';
-startScreen.style.top = '220px';
-startScreen.style.left = '530px';
-body.appendChild(startScreen);
+let container2 = document.createElement('div');
+container2.classList.add('container2');
+body.appendChild(container2);
+let gameTitle = document.createElement('h1');
+gameTitle.classList.add('gameTitle');
+gameTitle.textContent = 'Hoppy Havoc';
+container2.appendChild(gameTitle);
+let start = document.createElement('p');
+start.classList.add('start');
+start.textContent = 'Hit Enter To Begin!';
+container2.appendChild(start);
 
 let gameOn = false
 window.addEventListener('keyup', (e) =>{
 switch(e.key) {
     case 'Enter':
        gameOn = true;
-       body.removeChild(startScreen);
+       body.removeChild(container2);
+       count();
 setInterval(charGravity, 20);
 goInterval = setInterval(generateObstacles, 1750);
 }
@@ -121,18 +116,9 @@ function detectHit() {
     }
    
 }    
-setInterval(detectHit, 1000); 
+setInterval(detectHit, 1); 
  let omInterval = setInterval(obstacleMovement, 1);
 
- //counter function
-//  function counter() {
-//     if (havocRight > obstacleRight && havocTop > obstacleTop) {
-//         console.log('1');
-//     } else (havocRight > obstacleRight && havocTop < obstacleTop) {
-//         console.log('1');
-//     }
-// } 
-// counter();
  //game end 
 function gameOver() {
     clearInterval(goInterval);
@@ -142,17 +128,19 @@ function gameOver() {
     gameOverText.classList.add('gameOver');
     gameOverText.textContent = 'Game Over!';
     body.appendChild(gameOverText);
-    gameOverText.style.top = '450px';
-    gameOverText.style.left = '657px';
+    gameOverText.style.top = '50%';
+    gameOverText.style.left = '50%';
     let reset = document.createElement('button');
     reset.classList.add('reset');
     reset.textContent = 'Restart';
     body.appendChild(reset);
-    reset.style.top = '650px';
-    reset.style.left = '657px';
+    reset.style.top = '50%';
+    reset.style.left = '50%';
     reset.addEventListener('click', (e) => {
         window.location.reload();
+       
     })
+     clearInterval(timer);
 } 
 }
 
