@@ -40,7 +40,7 @@ function count() {
     scoreX.style.left = '45%';
     scoreX.style.height = '75.3px';
     scoreX.style.width = '150px';
-    scoreX.style.backgroundColor = 'lightBlue';
+    scoreX.style.color = 'white';
     body.appendChild(scoreX);
 }
 //game start
@@ -126,16 +126,12 @@ function gameOver() {
     display.removeChild(obstacle);
     let gameOverText = document.createElement('h1');
     gameOverText.classList.add('gameOver');
-    gameOverText.textContent = 'Game Over!';
+    gameOverText.textContent = 'Game Over';
     body.appendChild(gameOverText);
-    gameOverText.style.top = '50%';
-    gameOverText.style.left = '50%';
     let reset = document.createElement('button');
     reset.classList.add('reset');
-    reset.textContent = 'Restart';
+    reset.textContent = 'Play Again';
     body.appendChild(reset);
-    reset.style.top = '50%';
-    reset.style.left = '50%';
     reset.addEventListener('click', (e) => {
         window.location.reload();
        

@@ -1,9 +1,10 @@
 body {
+    height: 100vh;
     background: url('_21_city-background-sprites_These-8-Bit-GIFs-Perfectly-Capture-the-Subtle-Movements-in-.gif');
 }
 
 .container {
-position: absolute;
+    position: absolute;
 }
 
 .container2 {
@@ -28,10 +29,13 @@ position: absolute;
 
 .gameOver {
     position: absolute;
+    bottom: 45%;
+    right: 26%;
     font-family: 'Press Start 2P', cursive;
-    color: blue;
+    color: rgb(0, 5, 51);
     font-size: 100px;
 }
+
 
 
 .gameTitle {
@@ -60,9 +64,12 @@ bottom: -420px;
 
 .reset { 
     position: absolute;
+    top: 50%;
+    right: 40%;
     font-family: 'Press Start 2P', cursive;
-    background: transparent;
-    font-size: 50px;
+    background: none;
+    color: rgb(0, 5, 51);
+    font-size: 40px;
 }
 
 .havoc {
