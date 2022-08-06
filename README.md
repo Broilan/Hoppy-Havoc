@@ -1,5 +1,10 @@
 # Project-1
 
+//Game Info
+Game Name: Hoppy Havoc
+
+Rules: Use the up, down, left, and right arrow keys to navigate your character, (Havoc) through the randomly spawning obstacles! Havoc is subject to gravity, so be weary!
+
 
 ![wireframe 1](https://user-images.githubusercontent.com/107972255/181410280-607b6300-21e1-428a-a8d1-bb3fc23f0e84.PNG)
 
