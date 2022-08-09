@@ -26,22 +26,22 @@ let arrows = window.addEventListener('keyup', (e) => {
 
 //timer styling + functionality
 function count() {
-    let scoreX = document.createElement('h1');
-    scoreX.classList.add('score');
+    let time = document.createElement('h1');
+    time.classList.add('time');
     let sec = '0';
     timer = setInterval(() =>{
-    scoreX.textContent = "00:" + sec;
+        time.textContent = "00:" + sec;
         sec++;
     }, 1000)
-    scoreX.style.display = 'flex';
-    scoreX.style.justifyContent = 'center';
-    scoreX.style.alignItems = 'center';
-    scoreX.style.top = '-22px';
-    scoreX.style.left = '45%';
-    scoreX.style.height = '75.3px';
-    scoreX.style.width = '150px';
-    scoreX.style.color = 'white';
-    body.appendChild(scoreX);
+    time.style.display = 'flex';
+    time.style.justifyContent = 'center';
+    time.style.alignItems = 'center';
+    time.style.top = '-22px';
+    time.style.left = '45%';
+    time.style.height = '75.3px';
+    time.style.width = '150px';
+    time.style.color = 'white';
+    body.appendChild(time);
 }
 //game start
 let container2 = document.createElement('div');
@@ -84,6 +84,9 @@ function generateObstacles() {
     let randomNum = Math.floor(Math.random() * window.innerHeight) - 250;
     obstacle.style.top = parseInt(randomNum) + 'px';
     display.appendChild(obstacle);
+    // setInterval(() => {
+    //     display.removeChild(obstacle);
+    // }, 8000);
 
 
 //pipe movement
@@ -91,10 +94,11 @@ function generateObstacles() {
     obstacle.style.left = parseInt(obstacle.style.left) - 1 + 'px';
     }
 
-//pipe removal
+// pipe removal
 function pipeRemove() {
         display.removeChild(obstacle);
 }
+
 setInterval(pipeRemove, 8000);
 
 //hit detection
@@ -119,11 +123,32 @@ function detectHit() {
 setInterval(detectHit, 1); 
  let omInterval = setInterval(obstacleMovement, 1);
 
+//  score counter
+function scoreCSS() {
+    let score = document.createElement('h1');
+    score.classList.add('score');
+    score.textContent = 0;
+    body.appendChild(score);
+};
+    scoreCSS();
+
+    // function scoreCounter() {
+    //     let havocRight = parseInt(havoc.style.left);
+    //     let obstacleRight = parseInt(obstacle.style.left);
+    //     let obstacleWidth =  parseInt(obstacle.clientWidth);
+    //     let score = document.querySelector('.score');
+    //     if(havocRight + havocWidth < obstacleRight) {
+    //        ;
+    //        } else(havocRight > obstacleRight + obstacleWidth) {
+    //         score.textContent = parseInt(score.textContent) + 1;
+    //         pipeRemove(); 
+    //        }
+    //     }
+    // setInterval(scoreCounter, 1);
  //game end 
 function gameOver() {
     clearInterval(goInterval);
     clearInterval(omInterval);
-    display.removeChild(obstacle);
     let gameOverText = document.createElement('h1');
     gameOverText.classList.add('gameOver');
     gameOverText.textContent = 'Game Over';
@@ -136,14 +161,8 @@ function gameOver() {
         window.location.reload();
        
     })
+    clearInterval(scoreCounter);
      clearInterval(timer);
 } 
 }
-
-
-   
-
-//boundaries
-document.body.style.overflow = "hidden";
-
 

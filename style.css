@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     background: url('background.gif');
+    overflow: hidden;
 }
 
 .container {
@@ -57,9 +58,16 @@ bottom: -420px;
 }
 
 
+.time {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
 .score {
     position: absolute;
     font-family: 'Press Start 2P', cursive;
+    color: white
 }
 
 .reset { 
