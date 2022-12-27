@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    width: 100vh;
     background: url('background.gif');
     overflow: hidden;
 }
@@ -10,8 +11,8 @@ body {
 
 .container2 {
     position: absolute;
-    top: 10%;
-    left: 50%;
+    top: 100vh;
+    left: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -22,9 +23,9 @@ body {
 
 .obstacle {
     position: absolute;
-    background-color: green;
+    /* background: url(https://i.imgur.com/zhNWveg.png);
     height: 500px;
-    width: 100px
+    width: 100px */
 
 }
 
@@ -41,8 +42,8 @@ body {
 
 .gameTitle {
 position: absolute;
-right: 750px;
-bottom: -420px;
+right: 80vh;
+bottom: 55vh;
     font-size: 100px;
     color: rgb(0, 5, 51);
         font-family: 'Press Start 2P', cursive;
@@ -51,8 +52,8 @@ bottom: -420px;
 .start {
     color: rgb(0, 5, 51);
     position: relative;
-    right: 520px;
-    bottom: -480px;
+    right: 50vh;
+    bottom: 50vh;
     font-size: 50px;
     font-family: 'Press Start 2P', cursive;
 }
@@ -92,7 +93,7 @@ background-color: black;
 bottom: 0px;
 left: 0px;
 height: 75px;
-width: 2000px;
+width: 10000vh;
 }
 
 .top {
@@ -101,7 +102,7 @@ width: 2000px;
     top: 0px;
     left: 0px;
     height: 75px;
-    width: 2000px;
+    width: 10000vh;
     }
 
 

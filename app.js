@@ -1,6 +1,7 @@
 const havoc = document.querySelector(".havoc");
 const display = document.querySelector('.container')
 const body = document.querySelector('body')
+const obstacle = document.querySelector('.obstacle')
 
 //Character Movement Constant + gravity
 const keyPress = 60;
@@ -64,7 +65,7 @@ switch(e.key) {
        body.removeChild(container2);
        count();
 setInterval(charGravity, 20);
-goInterval = setInterval(generateObstacles, 1750);
+goInterval = setInterval(generateObstacles, 1000);
 }
 })
 
@@ -78,8 +79,6 @@ function charGravity() {
 
 //creating pipes
 function generateObstacles() {
-    let obstacle = document.createElement('div');
-    obstacle.classList.add('obstacle');
     obstacle.style.left = '1900px';
     let randomNum = Math.floor(Math.random() * window.innerHeight) - 250;
     obstacle.style.top = parseInt(randomNum) + 'px';
@@ -91,7 +90,7 @@ function generateObstacles() {
 
 //pipe movement
     function obstacleMovement() {
-    obstacle.style.left = parseInt(obstacle.style.left) - 1 + 'px';
+    obstacle.style.left = parseInt(obstacle.style.left) - 2.5 + 'px';
     }
 
 // pipe removal
@@ -99,7 +98,7 @@ function pipeRemove() {
         display.removeChild(obstacle);
 }
 
-setInterval(pipeRemove, 8000);
+setInterval(pipeRemove, 20000);
 
 //hit detection
 function detectHit() {
