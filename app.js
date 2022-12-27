@@ -80,7 +80,7 @@ function charGravity() {
 //creating pipes
 function generateObstacles() {
     obstacle.style.left = '1900px';
-    let randomNum = Math.floor(Math.random() * window.innerHeight) - 250;
+    let randomNum = Math.floor(Math.random() * window.innerHeight) - 300;
     obstacle.style.top = parseInt(randomNum) + 'px';
     display.appendChild(obstacle);
     // setInterval(() => {
