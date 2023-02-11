@@ -12,21 +12,22 @@
 </head>
 
 <body> 
-<div class = "container">
-
+<div class = 'container'>
+<h1 class = "title">Hoppy Havoc</h1>
+<h3 class = "start">Press Enter To Play!</h3>
 </div>
-
-<div class = 'bottom'></div>
 
 <div class = 'top'></div>
 
+<div class = 'score' style="margin-top: 10px;"> 0 </div>
+
 <div class = 'images'>
-    <img src="dog.png" alt="dog" class='havoc' style="top: 400px; left: 0; width: 80px; height: 80px;">
+    <img src="dog.png" alt="dog" class='havoc' style="top: 400px; left: 0;">
 </div>
 
-<div class="obstacles">
-    <img src="squirrel.png" class="obstacle" style="top: -100px; left: 0; width: 115px; height: 115px;" />
-</div>
+    <img src="squirrel.png" class="obstacle" style="position: absolute; top: 400px; left: 3000px; width: 180px; height: 180px;" />
+    <img src="squirrel.png" class="obstacleTwo" style="position: absolute; top: 400px; left: 3000px; width: 180px; height: 180px;" />
+    <img src="squirrel.png" class="obstacleThree" style="position: absolute; top: 400px; left: 3000px; width: 180px; height: 180px;" />
 
 <script src = "app.js"></script>
 </body>

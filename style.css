@@ -1,33 +1,47 @@
 body {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     background: url('background.gif');
     overflow: hidden;
 }
 
+@media screen and (min-width: 2000px) {
+    body {
+    background-size: 50%;
+    }
+    .havoc {
+        width: 170px;
+        height: 170px;
+        }
+  }
+
+  @media screen and (max-width: 1600px) {
+    .havoc {
+    width: 100px;
+    height: 100px;
+    }    
+  }
+
+  @media screen and (max-width: 2000px) {
+    .havoc {
+    width: 140px;
+    height: 140px;
+    } 
+  }
+
 .container {
     position: absolute;
-}
-
-.container2 {
-    position: absolute;
-    top: 100vh;
-    left: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
-    width: 100vh;
-}
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    flex-direction: column;
+} 
 
-.obstacle {
-    position: absolute;
-    /* background: url(https://i.imgur.com/zhNWveg.png);
-    height: 500px;
-    width: 100px */
 
-}
 
 .gameOver {
     position: absolute;
@@ -40,33 +54,32 @@ body {
 
 
 
-.gameTitle {
-position: absolute;
-right: 80vh;
-bottom: 55vh;
-    font-size: 100px;
+.title {
+    font-size: 80px;
     color: rgb(0, 5, 51);
         font-family: 'Press Start 2P', cursive;
 }
 
 .start {
     color: rgb(0, 5, 51);
-    position: relative;
-    right: 50vh;
-    bottom: 50vh;
     font-size: 50px;
     font-family: 'Press Start 2P', cursive;
 }
 
+.obstacle {
+    position: absolute;
+}
 
 .time {
     position: absolute;
+    font-size: larger;
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
 
 .score {
     position: absolute;
+    font-size: 50px;
     font-family: 'Press Start 2P', cursive;
     color: white
 }
@@ -87,23 +100,8 @@ bottom: 55vh;
     width: 1; */
 }
 
-.bottom {
-position: absolute;
-background-color: black;
-bottom: 0px;
-left: 0px;
-height: 75px;
-width: 10000vh;
-}
 
-.top {
-    position: absolute;
-    background-color: black;
-    top: 0px;
-    left: 0px;
-    height: 75px;
-    width: 10000vh;
-    }
+
 
 
 
