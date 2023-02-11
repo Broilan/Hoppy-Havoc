@@ -1,6 +1,9 @@
-# Project-1
+OBJECTIVE:
+------------------
+-Navigate your character, (Havoc) through the incoming hoarde of squirrels. Don't get hit, or it's game-over!
+-
+ps: Make sure Havoc doesn't exit your screen boundaries, or that will also result in a game-over!
 
-Hoppy Havoc is a 2d single player game in which the objective is to maneuver Havoc the Malinois around the incoming obstacles. Be sure not to hit them, or your game will end! Try to get the highest time!
 
 
 
