@@ -4,6 +4,9 @@ const body = document.querySelector('body')
 const obstacle = document.querySelector('.obstacle')
 const obstacleTwo = document.querySelector('.obstacleTwo')
 const obstacleThree = document.querySelector('.obstacleThree')
+const obstacleFour = document.querySelector('.obstacleFour')
+const obstacleFive = document.querySelector('.obstacleFive')
+const obstacleSix = document.querySelector('.obstacleSix')
 const score = document.querySelector(".score")
 const container = document.querySelector(".container")
 
@@ -64,9 +67,12 @@ switch(e.key) {
 setInterval(charGravity, 20);
 
 
-let gO = setInterval(generateObstacles, 3200);
-let gOTwo = setInterval(generateObstaclesTwo, 3500);
-let gOThree = setInterval(generateObstaclesThree, 3750);
+let gO = setInterval(generateObstacles, 2900);
+let gOTwo = setInterval(generateObstaclesTwo, 3400);
+let gOThree = setInterval(generateObstaclesThree, 3700);
+let gOFour = setInterval(generateObstaclesFour, 4000);
+let gOFive = setInterval(generateObstaclesFive, 4500);
+let gOSix = setInterval(generateObstaclesSix, 5000);
 
 //gravity
 function charGravity() {
@@ -205,10 +211,67 @@ function detectHitThree() {
     }
    
 }   
+function detectHitFour() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleFour.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleFour.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleFour.clientHeight);
+    let obstacleWidth =  parseInt(obstacleFour.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+    } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+} 
+function detectHitFive() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleFive.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleFive.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleFive.clientHeight);
+    let obstacleWidth =  parseInt(obstacleFive.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+    } else if (havocTop + havocHeight < obstacleTop) { // directly above a pipe 
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+}   
+function detectHitSix() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleSix.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleSix.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleSix.clientHeight);
+    let obstacleWidth =  parseInt(obstacleSix.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+    } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+} 
 
 let dh = setInterval(detectHit, 1); 
 let dhtwo = setInterval(detectHitTwo, 1); 
 let dhthree =setInterval(detectHitThree, 1); 
+let dhFour = setInterval(detectHitFour, 1); 
+let dhFive = setInterval(detectHitFive, 1); 
+let dhSix =setInterval(detectHitSix, 1); 
 
 
 //score counter
@@ -226,8 +289,10 @@ function detectPositionOne() {
         
     } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
         incrementScore()
+        return
     } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
         incrementScore()
+        return
     } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
     } else (gameOver()); {
     }
@@ -247,8 +312,10 @@ function detectPositionTwo() {
     if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
     } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
         incrementScore()
+        return
     } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
         incrementScore()
+        return
     } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
     } else (gameOver()); {
     }
@@ -267,8 +334,79 @@ function detectPositionThree() {
     if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
     } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
         incrementScore()
+        return
+    } else if (havocTop + havocHeight < obstacleTop) { // directly above a pipe
+        incrementScore() 
+        return
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+} 
+
+function detectPositionFour() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleFour.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleFour.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleFour.clientHeight);
+    let obstacleWidth =  parseInt(obstacleFour.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) { //directly to the left of a pipe
+        
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+        incrementScore()
+        return
+    } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
+        incrementScore()
+        return
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+}  
+
+function detectPositionFive() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleFive.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleFive.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleFive.clientHeight);
+    let obstacleWidth =  parseInt(obstacleFive.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+        incrementScore()
+        return
+    } else if (havocTop + havocHeight < obstacleTop) {// directly above a pipe 
+        incrementScore()
+        return
+    } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
+    } else (gameOver()); {
+    }
+   
+} 
+function detectPositionSix() {
+    let havocRight = parseInt(havoc.style.left);
+    let obstacleRight = parseInt(obstacleSix.style.left);
+    let havocTop = parseInt(havoc.style.top);
+    let obstacleTop = parseInt(obstacleSix.style.top);
+    let havocWidth = parseInt(havoc.clientWidth);
+    let havocHeight = parseInt(havoc.clientHeight);
+    let obstacleHeight = parseInt(obstacleSix.clientHeight);
+    let obstacleWidth =  parseInt(obstacleSix.clientWidth);
+    // compare tops to bottoms
+    if(havocRight + havocWidth < obstacleRight) {  //directly to the left of a pipe
+    } else if (havocTop > obstacleTop + obstacleHeight) {// directly below a pipe
+        incrementScore()
+        return
     } else if (havocTop + havocHeight < obstacleTop) { // directly above a pipe 
         incrementScore()
+        return
     } else if (havocRight > obstacleRight + obstacleWidth) {//directly to the right of a pipe
     } else (gameOver()); {
     }
@@ -281,27 +419,50 @@ function incrementScore() {
 const pointOne = setInterval(detectPositionOne, 600); 
 const pointTwo = setInterval(detectPositionTwo, 600); 
 const pointThree = setInterval(detectPositionThree, 600); 
+const pointFour = setInterval(detectPositionFour, 600); 
+const pointFive = setInterval(detectPositionFive, 600); 
+const pointSix = setInterval(detectPositionSix, 600);
 
 //creating pipes
 function generateObstacles() {
     obstacle.style.left = window.innerWidth + 'px';
-    let randomNum = Math.floor(Math.random() * window.innerHeight) + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
     obstacle.style.top = parseInt(randomNum) + 'px';
     display.appendChild(obstacle);
 } 
 
 function generateObstaclesTwo() {
-    obstacle.style.left = window.innerWidth + 'px';
-    let randomNum = Math.floor(Math.random() * window.innerHeight) + 'px';
+    obstacleTwo.style.left = window.innerWidth + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
     obstacleTwo.style.bottom = parseInt(randomNum) + 'px';
     display.appendChild(obstacleTwo);
 } 
 
 function generateObstaclesThree() {
-    obstacle.style.left = window.innerWidth + 'px';
-    let randomNum = Math.floor(Math.random() * window.innerHeight) + 'px';
+    obstacleThree.style.left = window.innerWidth + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
     obstacleThree.style.top = parseInt(randomNum) + 'px';
     display.appendChild(obstacleThree);
+} 
+function generateObstaclesFour() {
+    obstacleFour.style.left = window.innerWidth + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
+    obstacleFour.style.top = parseInt(randomNum) + 'px';
+    display.appendChild(obstacleFour);
+} 
+
+function generateObstaclesFive() {
+    obstacleFive.style.left = window.innerWidth + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
+    obstacleFive.style.bottom = parseInt(randomNum) + 'px';
+    display.appendChild(obstacleFive);
+} 
+
+function generateObstaclesSix() {
+    obstacleSix.style.left = window.innerWidth + 'px';
+    let randomNum = Math.floor(Math.random() * window.innerHeight + 25) + 'px';
+    obstacleSix.style.top = parseInt(randomNum) + 'px';
+    display.appendChild(obstacleSix);
 } 
 
     
@@ -310,12 +471,21 @@ function gameOver() {
     clearInterval(pointOne);
     clearInterval(pointTwo);
     clearInterval(pointThree);
+    clearInterval(pointFour);
+    clearInterval(pointFive);
+    clearInterval(pointSix);
     clearInterval(gO);
     clearInterval(gOTwo);
     clearInterval(gOThree);
+    clearInterval(gOFour);
+    clearInterval(gOFive);
+    clearInterval(gOSix);
     clearInterval(dh);
     clearInterval(dhtwo);
     clearInterval(dhthree);
+    clearInterval(dhFour);
+    clearInterval(dhFive);
+    clearInterval(dhSix);
     clearInterval(omInterval);
     clearInterval(omIntervalTwo);
     clearInterval(omIntervalThree);
