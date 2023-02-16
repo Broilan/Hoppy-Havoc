@@ -1,3 +1,7 @@
+PLAY HERE
+--------
+https://hoppyhavoc.netlify.app/
+
 OBJECTIVE:
 ------------------
 1) Navigate your character, (Havoc) through the incoming hoarde of squirrels using the arrow keys. Don't get hit, or it's game-over!
