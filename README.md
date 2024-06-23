@@ -2,8 +2,6 @@
 
 Hoppy Havoc is a Flappy Bird mimic wherein the the goal is to navigate your character, Havoc, through the oncoming hoarde of squirrels.
 
-https://hoppyhavoc.netlify.app/
-
 ## How to Play
 
 1. **Begin:** Click the spacebar to begin.
