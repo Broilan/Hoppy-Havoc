@@ -1,27 +1,23 @@
-PLAY HERE
---------
+# Hoppy Havoc
+
+Hoppy Havoc is a Flappy Bird mimic wherein the the goal is to navigate your character, Havoc, through the oncoming hoarde of squirrels.
+
 https://hoppyhavoc.netlify.app/
 
-TECHNOLOGIES USED
-------------------------
-Javascript, HTML, CSS
+## How to Play
 
-OBJECTIVE:
-------------------
-1) Navigate your character, Havoc, through the incoming hoarde of squirrels using the arrow keys. Don't get hit, or it's game-over!
+1. **Begin:** Click the spacebar to begin.
+2. **Movement:** Navigate Havoc through the squirrels using the arrow keys.
+3. **Game Over:** If you run into a squirrel, the game ends.
 
-2) Make sure Havoc doesn't exit your screen boundaries, or that will also result in a game-over!
+## Technologies
 
-OPENING SCREEN
-----------------
-![hh](https://user-images.githubusercontent.com/107972255/218398985-f8522843-6741-45b3-b7ee-906cd1697947.JPG)
+- Javascript 
+- HTML 
+- CSS
 
-GAMEPLAY
----------------
-![mid](https://user-images.githubusercontent.com/107972255/218399048-aec53758-b199-475d-9b76-808a06a9fa65.JPG)
+### Play here
 
-GAME OVER
----------------
-![go](https://user-images.githubusercontent.com/107972255/218399097-cc893c47-e17c-4b55-ac7c-4d853b57f7da.JPG)
+https://hoppyhavoc.netlify.app/
 
 
