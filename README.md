@@ -14,8 +14,3 @@ Hoppy Havoc is a Flappy Bird mimic wherein the the goal is to navigate your char
 - HTML 
 - CSS
 
-## Play here
-
-https://hoppyhavoc.netlify.app/
-
-
